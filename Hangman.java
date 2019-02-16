@@ -57,15 +57,22 @@ public class Hangman extends ConsoleProgram {
 		String randomWord = getRandomWord();
 		intialWord();
 		println ("Your word now looks like this: " + randomWord);
+		println ("You have " + N_GUESSES + " left.");
+		playGame();
 		
 	}
 	
 	private String intialWord() {
 		String result = "";
-		for (int i = 0; i < word.length(); i++) {
+		for (int i = 0; i < .length(); i++) {
 			result = result + "-";
 		}
 		return result;
+	}
+	
+	private void playGame() {
+		String getGuess = readLine ("Your guess: ");
+		
 	}
 	
 	/**
