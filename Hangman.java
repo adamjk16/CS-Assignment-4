@@ -76,7 +76,11 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void checkLetter() {
-		
+		for (int i = 0; i < word.length(); i++) {
+			if (ch == word.charAt(i)) {
+				
+			}
+		}
 	}
 	
 	/**
