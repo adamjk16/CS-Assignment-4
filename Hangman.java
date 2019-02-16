@@ -54,7 +54,8 @@ public class Hangman extends ConsoleProgram {
 	
 	public void run() {
 		println ("Welcome to Hangman");
-		println ("Your word now looks like this: " + randomWord)
+		println ("Your word now looks like this: " + g);
+		
 	}
 	
 	/**
