@@ -71,7 +71,11 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void playGame() {
-		String getGuess = readLine ("Your guess: ");
+		String guessLetter = readLine ("Your guess: ");
+		checkLetter();
+	}
+	
+	private void checkLetter() {
 		
 	}
 	
