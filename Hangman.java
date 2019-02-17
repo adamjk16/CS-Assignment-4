@@ -63,7 +63,10 @@ public class Hangman extends ConsoleProgram {
 				for (int i = 0; i < word.length(); i++) {
 					hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
 				}
+			} else {
+				N_GUESSES--;
 			}
+			println ("Your guess now looks like this: " + hiddenWord);
 			
 		}
 	}
