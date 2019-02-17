@@ -54,9 +54,8 @@ public class Hangman extends ConsoleProgram {
 	
 	public void run() {
 		println ("Welcome to Hangman");
-		String word = getRandomWord();
-		intialWord();
-		println ("Your word now looks like this: " + word);
+		String randomWord = getRandomWord();
+		println ("Your word now looks like this: " + intialWord());
 		println ("You have " + N_GUESSES + " left.");
 		playGame();
 		
