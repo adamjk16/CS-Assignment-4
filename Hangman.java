@@ -53,34 +53,8 @@ public class Hangman extends ConsoleProgram {
 	 ***********************************************************/
 	
 	public void run() {
-		println ("Welcome to Hangman");
-		String randomWord = getRandomWord();
-		println ("Your word now looks like this: " + intialWord());
-		println ("You have " + N_GUESSES + " left.");
-		playGame();
-		
-	}
-	
-	private String intialWord() {
-		String word = "";
-		for (int i = 0; i < word.length(); i++) {
-			word = word + "-";
-		}
-		return word;
-	}
-	
-	private void playGame() {
-		String guessLetter = readLine ("Your guess: ");
-		Character letter = guessLetter.charAt(0);
-		checkLetter();
-	}
-	
-	private void checkLetter() {
-		for (int i = 0; i < word.length(); i++) {
-			if (ch == word.charAt(i)) {
-				
-			}
-		}
+		println("Welcome to Hangman");
+		println("Your word now looks like this: " + );
 	}
 	
 	/**
