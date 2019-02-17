@@ -88,7 +88,9 @@ public class Hangman extends ConsoleProgram {
 	
 	private void checkLetter() {
 		for (int i = 0; i < word.length(); i++) {
-			hideWord = hideWord.substring(0, i) + letter + hideWord.substring(i + 1);
+			if (letter == word.charAt(i)) {
+				hideWord = hideWord.substring(0, i) + letter + hideWord.substring(i + 1);
+			}
 		}
 	}
 	
