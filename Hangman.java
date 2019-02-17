@@ -64,7 +64,7 @@ public class Hangman extends ConsoleProgram {
 					hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
 				}
 			} else {
-				N_GUESSES--;
+				guesses--;
 			}
 			println ("Your guess now looks like this: " + hiddenWord);
 			
@@ -79,6 +79,7 @@ public class Hangman extends ConsoleProgram {
 		return result;
 	}
 	
+	private int guesses = N_GUESSES;
 	
 	private String hiddenWord = hideWord();
 	String word = getRandomWord();
