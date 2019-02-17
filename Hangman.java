@@ -60,7 +60,9 @@ public class Hangman extends ConsoleProgram {
 		while (true) {
 			String letter = readLine ("Your guess: ");
 			if (word.indexOf(letter) != -1) {
-				
+				for (int i = 0; i < word.length(); i++) {
+					hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
+				}
 			}
 			
 		}
