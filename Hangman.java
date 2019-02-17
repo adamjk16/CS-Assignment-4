@@ -56,13 +56,16 @@ public class Hangman extends ConsoleProgram {
 	public void run() {
 		println("Welcome to Hangman");
 		println("Your word now looks like this: " + hiddenWord);
+		println("You have " + N_GUESSES + "left.");
+		
 	}
 	
-	private void hideWord() {
+	private String hideWord() {
 		String result = "";
 		for (int i = 0; i < word.length(); i++) {
 			result = result + "-";
 		}
+		return result;
 	}
 	
 	private String hiddenWord = hideWord();
