@@ -54,17 +54,31 @@ public class Hangman extends ConsoleProgram {
 	
 	public void run() {
 		println("Welcome to Hangman");
-		println("Your word now looks like this: " + hiddenWord);
+		println("Your word now looks like this: " + hideWord());
+		guesses();
+		game();
 	}
 	
 	private String word = getRandomWord();
 	
-	private String hiddenWord () {
+	private String hideWord() {
 		String result = "";
 		for (int i = 0; i < word.length(); i++) {
-			
+			result = result + "-";
 		}
+		return result;
 	}
+	
+	private void guesses() {
+		println ("You have " + N_GUESSES + " left.");
+	}
+	
+	private void game() {
+		String guess = readLine ("Your guess: ");
+		
+	}
+	
+	
 	/**
 	 * Method: Get Random Word
 	 * -------------------------
