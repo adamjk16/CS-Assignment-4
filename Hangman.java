@@ -54,20 +54,20 @@ public class Hangman extends ConsoleProgram {
 	
 	public void run() {
 		println ("Welcome to Hangman");
-		String randomWord = getRandomWord();
+		String word = getRandomWord();
 		intialWord();
-		println ("Your word now looks like this: " + randomWord);
+		println ("Your word now looks like this: " + word);
 		println ("You have " + N_GUESSES + " left.");
 		playGame();
 		
 	}
 	
 	private String intialWord() {
-		String result = "";
-		for (int i = 0; i < .length(); i++) {
-			result = result + "-";
+		String word = "";
+		for (int i = 0; i < word.length(); i++) {
+			word = word + "-";
 		}
-		return result;
+		return word;
 	}
 	
 	private void playGame() {
