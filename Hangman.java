@@ -52,6 +52,7 @@ public class Hangman extends ConsoleProgram {
 	 *                    Methods                              *
 	 ***********************************************************/
 	
+	int guesses = N_GUESSES;
 	
 	public void run() {
 		println("Welcome to Hangman");
@@ -79,7 +80,7 @@ public class Hangman extends ConsoleProgram {
 		return result;
 	}
 	
-	private int guesses = N_GUESSES;
+	
 	
 	private String hiddenWord = hideWord();
 	String word = getRandomWord();
