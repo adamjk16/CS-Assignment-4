@@ -75,15 +75,18 @@ public class Hangman extends ConsoleProgram {
 		println ("You have " + N_GUESSES + " left.");
 	}
 	
+	private char letter;
+	
 	private void game() {
-		String guess = readLine ("Your guess: ");
+		String getLetter = readLine("Your guess: ");
+		letter = getLetter.charAt(0);
 		checkLetter();
 		
 	}
 	
 	private void checkLetter() {
 		for (int i = 0; i < word.length(); i++) {
-			hideWord = hideWord.substring(0, i) + guess + hideWord.substring(i + 1);
+			hideWord = hideWord.substring(0, i) + letter + hideWord.substring(i + 1);
 		}
 	}
 	
