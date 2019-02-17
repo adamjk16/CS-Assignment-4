@@ -58,7 +58,8 @@ public class Hangman extends ConsoleProgram {
 		println("Your word now looks like this: " + hiddenWord);
 		println("You have " + N_GUESSES + "left.");
 		while (true) {
-			enterLetter();
+			String enterLetter = readLine ("Your guess: ");
+			
 		}
 	}
 	
@@ -70,9 +71,7 @@ public class Hangman extends ConsoleProgram {
 		return result;
 	}
 	
-	private String enterLetter() {
-		
-	}
+	
 	private String hiddenWord = hideWord();
 	String word = getRandomWord();
 	
