@@ -61,6 +61,7 @@ public class Hangman extends ConsoleProgram {
 		while (true) {
 			String getLetter = readLine ("Your guess: ");
 			char letter = getLetter.charAt(0);
+			
 			if (word.indexOf(letter) != -1) {
 				for (int i = 0; i < word.length(); i++) {
 					if (letter == word.charAt(i)) {
