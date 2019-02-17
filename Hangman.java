@@ -78,10 +78,12 @@ public class Hangman extends ConsoleProgram {
 	private char letter;
 	
 	private void game() {
+		while (true) {
 		String getLetter = readLine("Your guess: ");
 		letter = getLetter.charAt(0);
 		checkLetter();
-		
+		println ("Your word now looks like this: " + hideWord);
+		}
 	}
 	
 	private void checkLetter() {
