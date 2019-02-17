@@ -59,7 +59,9 @@ public class Hangman extends ConsoleProgram {
 		println("You have " + N_GUESSES + "left.");
 		while (true) {
 			String letter = readLine ("Your guess: ");
-			string.indexOf('letter');
+			if (word.indexOf(letter) != -1) {
+				
+			}
 			
 		}
 	}
