@@ -52,16 +52,18 @@ public class Hangman extends ConsoleProgram {
 	 *                    Methods                              *
 	 ***********************************************************/
 	
+	
 	public void run() {
 		println("Welcome to Hangman");
-		println("Your word now looks like this: " + hideWord());
+		println("Your word now looks like this: " + hideWord);
 		guesses();
 		game();
 	}
 	
 	private String word = getRandomWord();
+	private String hideWord = dashWord();
 	
-	private String hideWord() {
+	private String dashWord() {
 		String result = "";
 		for (int i = 0; i < word.length(); i++) {
 			result = result + "-";
@@ -81,7 +83,7 @@ public class Hangman extends ConsoleProgram {
 	
 	private void checkLetter() {
 		for (int i = 0; i < word.length(); i++) {
-			
+			hideWord = hideWord.substring(0, i) + guess + hideWord.substring(i + 1);
 		}
 	}
 	
