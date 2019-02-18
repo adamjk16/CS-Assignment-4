@@ -52,17 +52,16 @@ public class Hangman extends ConsoleProgram {
 	 *                    Methods                              *
 	 ***********************************************************/
 	
-	
+	private int guesses = N_GUESSES;
+	private String word = getRandomWord();
+	private String hiddenWord;
+	private String getLetter;
 	
 	public void run() {
 		setUp();
 		playGame();
 	}	
 	
-	private int guesses = N_GUESSES;
-	private String word = getRandomWord();
-	private String hiddenWord;
-	private String getLetter;
 	
 	private void setUp() {
 		println("Welcome to Hangman");
