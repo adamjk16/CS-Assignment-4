@@ -79,10 +79,11 @@ public class Hangman extends ConsoleProgram {
 				for (int i = 0; i < word.length(); i++) {
 					if (letter == word.charAt(i)) {
 						hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
-					} else {
-						guesses--;
-					}		
+					} 		
 				}
+			} else {
+				println("There are no " + letter + "'s in the word.");
+				guesses--;
 			}
 			println("Your guess now looks like this: " + hiddenWord);
 			println("You have " + guesses + " guesses left.");
