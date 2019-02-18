@@ -64,6 +64,7 @@ public class Hangman extends ConsoleProgram {
 	
 	public void init() {
 		add(canvas);
+		drawBackground();
 	}
 	
 	private void setUp() {
@@ -117,7 +118,11 @@ public class Hangman extends ConsoleProgram {
 		}
 	}	
 	
-	
+	private void drawBackground() {
+		GImage bg = new GImage ("background.jpg");
+		bg.setSize(canvas.getWidth(), canvas.getHeight());
+		canvas.add(bg, 0, 0);
+	}
 
 	
 	/**
