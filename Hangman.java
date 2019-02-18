@@ -74,15 +74,15 @@ public class Hangman extends ConsoleProgram {
 	}	
 		
 	private void playGame() {	
-		while (guesses > 0) {	
+		while (guesses > 0 && hiddenWord != word) {	
 			getLetter = readLine ("Your guess: ");
 			checkLetter();
 			println("Your guess now looks like this: " + hiddenWord);
 			println("You have " + guesses + " guesses left.");	
-			if (hiddenWord == word) {
-				println("You win.");
-				println("The word was: " + word);
-			}
+		}
+		if (hiddenWord == word) {
+			println("You win.");
+			println("The word was: " + word);
 		}
 	}	
 	
