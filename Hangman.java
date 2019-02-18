@@ -76,7 +76,7 @@ public class Hangman extends ConsoleProgram {
 		while (guesses > 0) {	
 			getLetter = readLine ("Your guess: ");
 			if (getLetter.length() > 1) {
-				
+				getLetter = readLine ("Please enter only character. Your guess: ");
 			}
 			checkLetter();	
 			if (hiddenWord.equals(word)) {
