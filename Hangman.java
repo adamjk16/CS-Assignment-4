@@ -71,23 +71,13 @@ public class Hangman extends ConsoleProgram {
 	}	
 		
 	private void playGame() {	
-		while (true) {
+	
 			String getLetter = readLine ("Your guess: ");
 			letter = getLetter.charAt(0);
 			
-			if (word.indexOf(letter) != -1) {
-				for (int i = 0; i < word.length(); i++) {
-					if (letter == word.charAt(i)) {
-						hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
-					} 		
-				}
-			} else if (word.indexOf(letter) == -1) {
-				println("There are no " + letter + "'s in the word.");
-				guesses--;
-			}
+			checkLetter();
 			println("Your guess now looks like this: " + hiddenWord);
-			println("You have " + guesses + " guesses left.");
-		}	
+			println("You have " + guesses + " guesses left.");	
 	}
 	
 	private String hideWord(String word) {
@@ -96,6 +86,18 @@ public class Hangman extends ConsoleProgram {
 			result = result + "-";
 		}
 		return result;
+	}
+	
+	private void checkLetter() {
+	if (word.indexOf(letter) != -1) {
+		for (int i = 0; i < word.length(); i++) {
+			if (letter == word.charAt(i)) {
+				hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
+			} 		
+		}
+	} else if (word.indexOf(letter) == -1) {
+		println("There are no " + letter + "'s in the word.");
+		guesses--;
 	}
 	
 	
