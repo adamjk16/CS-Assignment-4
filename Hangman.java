@@ -66,6 +66,7 @@ public class Hangman extends ConsoleProgram {
 		add(canvas);
 		drawBackground();
 		drawKarel();
+		drawParachute();
 	}
 	
 	private void setUp() {
@@ -129,6 +130,12 @@ public class Hangman extends ConsoleProgram {
 		GImage karel = new GImage ("karel.png");
 		karel.setSize(KAREL_SIZE, KAREL_SIZE);
 		canvas.add(karel, canvas.getWidth()/2 - KAREL_SIZE/2, KAREL_Y);
+	}
+	
+	private void drawParachute() {
+		GImage parachute = new GImage ("parachute.png");
+		parachute.setSize(PARACHUTE_WIDTH, PARACHUTE_HEIGHT);
+		canvas.add(parachute, canvas.getWidth()/2 - PARACHUTE_WIDTH/2, PARACHUTE_Y);
 	}
 
 	
