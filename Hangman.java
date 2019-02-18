@@ -66,6 +66,7 @@ public class Hangman extends ConsoleProgram {
 	
 	private void setUp() {
 		println("Welcome to Hangman");
+		println(word);
 		hiddenWord = hideWord(word);
 		println("Your word now looks like this: " + hiddenWord);
 		println("You have " + N_GUESSES + " guesses left.");
