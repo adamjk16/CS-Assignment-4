@@ -72,7 +72,6 @@ public class Hangman extends ConsoleProgram {
 	}	
 		
 	private void playGame() {	
-	
 			String getLetter = readLine ("Your guess: ");
 			letter = getLetter.charAt(0);
 			
@@ -97,7 +96,7 @@ public class Hangman extends ConsoleProgram {
 						hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
 					} 		
 				}
-			} else if (word.indexOf(letter) == -1) {
+			} else {
 				println("There are no " + letter + "'s in the word.");
 				guesses--;
 			}
