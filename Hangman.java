@@ -62,7 +62,6 @@ public class Hangman extends ConsoleProgram {
 	private int guesses = N_GUESSES;
 	private String word = getRandomWord();
 	private String hiddenWord;
-	private char letter;
 	private String getLetter;
 	
 	private void setUp() {
