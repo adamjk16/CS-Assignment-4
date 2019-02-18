@@ -76,6 +76,10 @@ public class Hangman extends ConsoleProgram {
 	private void playGame() {	
 		while (guesses > 0) {	
 			getLetter = readLine ("Your guess: ");
+			char letter = getLetter.charAt(0);
+			if (Character.isLowerCase(letter)) {
+				letter = Character.toUpperCase(letter);
+			}
 			checkLetter();
 			println("Your guess now looks like this: " + hiddenWord);
 			println("You have " + guesses + " guesses left.");	
@@ -91,10 +95,7 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void checkLetter() {
-			char letter = getLetter.charAt(0);
-			if (Character.isLowerCase(letter)) {
-				letter = Character.toUpperCase(letter);
-			}
+			
 			if (word.indexOf(letter) != -1) {
 				for (int i = 0; i < word.length(); i++) {
 					if (letter == word.charAt(i)) {
