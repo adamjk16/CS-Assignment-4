@@ -81,7 +81,7 @@ public class Hangman extends ConsoleProgram {
 						hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
 					} 		
 				}
-			} else if (word.indexOf(letter) == 1) {
+			} else if (word.indexOf(letter) == -1) {
 				println("There are no " + letter + "'s in the word.");
 				guesses--;
 			}
