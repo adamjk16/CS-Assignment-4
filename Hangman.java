@@ -65,7 +65,7 @@ public class Hangman extends ConsoleProgram {
 			if (word.indexOf(letter) != -1) {
 				for (int i = 0; i < word.length(); i++) {
 					if (letter == word.charAt(i)) {
-						word = hiddenWord(word).substring(0, i) + letter + hiddenWord(word).substring(i + 1);
+						hiddenWord(word) = hiddenWord(word).substring(0, i) + letter + hiddenWord(word).substring(i + 1);
 					} else {
 						guesses--;
 					} 
