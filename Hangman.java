@@ -140,7 +140,7 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	public void displayWord (String hiddenWord) {
-		
+		GLabel partialWord = new GLabel (canvas.getWidth()/2 - partialWord.getWidth()/2, PARTIALLY_GUESSED_Y);
 	}
 
 	
