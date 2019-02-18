@@ -91,6 +91,8 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void checkLetter() {
+			char letter = getLetter.charAt(0);
+			letter = 
 			if (word.indexOf(letter) != -1) {
 				for (int i = 0; i < word.length(); i++) {
 					char letter = getLetter.charAt(0);
