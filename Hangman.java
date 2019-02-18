@@ -75,7 +75,7 @@ public class Hangman extends ConsoleProgram {
 		}	
 	}
 	
-	private String hideWord() {
+	String hiddenWord {
 		String result = "";
 		for (int i = 0; i < word.length(); i++) {
 			result = result + "-";
@@ -85,7 +85,6 @@ public class Hangman extends ConsoleProgram {
 	
 	
 	private String word = getRandomWord();
-	private String hiddenWord = hideWord();
 
 	
 	/**
