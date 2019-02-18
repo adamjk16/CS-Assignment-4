@@ -56,7 +56,7 @@ public class Hangman extends ConsoleProgram {
 	
 	public void run() {
 		println("Welcome to Hangman");
-		println("Your word now looks like this: " + hiddenWord);
+		println("Your word now looks like this: " + hiddenWord(word));
 		println("You have " + N_GUESSES + " guesses left.");
 		while (true) {
 			String getLetter = readLine ("Your guess: ");
@@ -65,17 +65,17 @@ public class Hangman extends ConsoleProgram {
 			if (word.indexOf(letter) != -1) {
 				for (int i = 0; i < word.length(); i++) {
 					if (letter == word.charAt(i)) {
-						hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
+						word = hiddenWord(word).substring(0, i) + letter + hiddenWord(word).substring(i + 1);
 					} else {
 						guesses--;
 					} 
 				}
 			}
-			println("Your guess now looks like this: " + hiddenWord);	
+			println("Your guess now looks like this: " + word);	
 		}	
 	}
 	
-	private String hiddenWord(String str) {
+	private String hiddenWord(String word) {
 		String result = "";
 		for (int i = 0; i < word.length(); i++) {
 			result = result + "-";
