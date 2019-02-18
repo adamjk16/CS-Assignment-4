@@ -146,7 +146,7 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void drawLines() {
-		
+		GLine line = new GLine ()
 	}
 
 	
