@@ -79,10 +79,11 @@ public class Hangman extends ConsoleProgram {
 			checkLetter();
 			println("Your guess now looks like this: " + hiddenWord);
 			println("You have " + guesses + " guesses left.");	
-		}
-		if (hiddenWord.equals(word)) {
-			println("You win.");
-			println("The word was: " + word);
+			if (hiddenWord.equals(word)) {
+				println("You win.");			
+				println("The word was: " + word);
+				break;
+			}
 		}
 	}	
 	
