@@ -89,7 +89,7 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void checkLetter() {
-		while (true) {
+		while (guesses > 0) {
 			if (word.indexOf(letter) != -1) {
 				for (int i = 0; i < word.length(); i++) {
 					if (letter == word.charAt(i)) {
