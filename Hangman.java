@@ -56,12 +56,15 @@ public class Hangman extends ConsoleProgram {
 	private String word = getRandomWord();
 	private String hiddenWord;
 	private String getLetter;
-	
+
 	public void run() {
 		setUp();
 		playGame();
 	}	
 	
+	public void init() {
+		add(canvas);
+	}
 	
 	private void setUp() {
 		println("Welcome to Hangman");
