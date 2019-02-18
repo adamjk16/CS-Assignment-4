@@ -90,18 +90,18 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void checkLetter() {
-	while (true) {
-		if (word.indexOf(letter) != -1) {
-		for (int i = 0; i < word.length(); i++) {
-			if (letter == word.charAt(i)) {
-				hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
-			} 		
-		}
-	} else if (word.indexOf(letter) == -1) {
-		println("There are no " + letter + "'s in the word.");
-		guesses--;
-	}
-	}	
+		while (true) {
+			if (word.indexOf(letter) != -1) {
+				for (int i = 0; i < word.length(); i++) {
+					if (letter == word.charAt(i)) {
+						hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
+					} 		
+				}
+			} else if (word.indexOf(letter) == -1) {
+				println("There are no " + letter + "'s in the word.");
+				guesses--;
+			}
+		}	
 	}
 	
 
