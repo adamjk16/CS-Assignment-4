@@ -92,10 +92,11 @@ public class Hangman extends ConsoleProgram {
 	
 	private void checkLetter() {
 			char letter = getLetter.charAt(0);
-			letter = 
+			if (Character.isLowerCase(letter)) {
+				letter = Character.toUpperCase(letter);
+			}
 			if (word.indexOf(letter) != -1) {
 				for (int i = 0; i < word.length(); i++) {
-					char letter = getLetter.charAt(0);
 					if (letter == word.charAt(i)) {
 						hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
 					} 		
