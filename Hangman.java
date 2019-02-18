@@ -112,7 +112,7 @@ public class Hangman extends ConsoleProgram {
 			for (int i = 0; i < word.length(); i++) {
 				if (letter == word.charAt(i)) {
 					hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
-					canvas.displayWord(hiddenWord);
+					canvas.displayWord;
 				} 		
 			}
 		} else {
@@ -133,13 +133,13 @@ public class Hangman extends ConsoleProgram {
 		canvas.add(karel, canvas.getWidth()/2 - KAREL_SIZE/2, KAREL_Y);
 	}
 	
-	private void drawParachute() {
+	public void drawParachute() {
 		GImage parachute = new GImage ("parachute.png");
 		parachute.setSize(PARACHUTE_WIDTH, PARACHUTE_HEIGHT);
 		canvas.add(parachute, canvas.getWidth()/2 - PARACHUTE_WIDTH/2, PARACHUTE_Y);
 	}
 	
-	private void displayWord (String word) {
+	private void displayWord(String word) {
 		GLabel partialWord = new GLabel (hiddenWord);
 		partialWord.setFont(PARTIALLY_GUESSED_FONT);		
 		canvas.add(partialWord, canvas.getWidth()/2 - partialWord.getWidth()/2, PARTIALLY_GUESSED_Y);
