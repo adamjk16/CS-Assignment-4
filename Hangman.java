@@ -60,12 +60,12 @@ public class Hangman extends ConsoleProgram {
 	}	
 	
 	private String word = getRandomWord();
-	String hiddenWord;
+	private String hiddenWord;
 	private char letter;
 	
 	private void setUp() {
 		println("Welcome to Hangman");
-		String hiddenWord = hideWord(word);
+		hiddenWord = hideWord(word);
 		println("Your word now looks like this: " + hiddenWord);
 		println("You have " + N_GUESSES + " guesses left.");
 	}	
