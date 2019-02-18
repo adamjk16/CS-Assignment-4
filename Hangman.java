@@ -70,10 +70,10 @@ public class Hangman extends ConsoleProgram {
 						hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
 					} else {
 						guesses--;
-					}
-					println("Your guess now looks like this: " + hiddenWord);		
+					}		
 				}
 			}
+			println("Your guess now looks like this: " + hiddenWord);
 	
 		}	
 	}
