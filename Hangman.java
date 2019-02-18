@@ -55,11 +55,20 @@ public class Hangman extends ConsoleProgram {
 	int guesses = N_GUESSES;
 	
 	public void run() {
+		setUp();
+		playGame();
+	}	
+	
+	private String word = getRandomWord();
+	private String hiddenWord = hideWord(word);
+	
+	private void setUp() {
 		println("Welcome to Hangman");
-		String word = getRandomWord();
-		String hiddenWord = hideWord(word);
 		println("Your word now looks like this: " + hiddenWord);
 		println("You have " + N_GUESSES + " guesses left.");
+	}	
+		
+	private void playGame() {	
 		while (true) {
 			String getLetter = readLine ("Your guess: ");
 			char letter = getLetter.charAt(0);
