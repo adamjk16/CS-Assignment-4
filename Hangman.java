@@ -52,13 +52,14 @@ public class Hangman extends ConsoleProgram {
 	 *                    Methods                              *
 	 ***********************************************************/
 	
-	int guesses = N_GUESSES;
+	
 	
 	public void run() {
 		setUp();
 		playGame();
 	}	
 	
+	private int guesses = N_GUESSES;
 	private String word = getRandomWord();
 	private String hiddenWord;
 	private char letter;
@@ -89,7 +90,8 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void checkLetter() {
-	if (word.indexOf(letter) != -1) {
+	while (true) {
+		if (word.indexOf(letter) != -1) {
 		for (int i = 0; i < word.length(); i++) {
 			if (letter == word.charAt(i)) {
 				hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
@@ -99,7 +101,8 @@ public class Hangman extends ConsoleProgram {
 		println("There are no " + letter + "'s in the word.");
 		guesses--;
 	}
-	
+	}	
+	}
 	
 
 	
