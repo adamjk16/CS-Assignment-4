@@ -112,7 +112,7 @@ public class Hangman extends ConsoleProgram {
 			for (int i = 0; i < word.length(); i++) {
 				if (letter == word.charAt(i)) {
 					hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
-					canvas.add(hiddenWord(wordGuesses));
+					canvas.displayWord(hiddenWord);
 				} 		
 			}
 		} else {
@@ -139,7 +139,9 @@ public class Hangman extends ConsoleProgram {
 		canvas.add(parachute, canvas.getWidth()/2 - PARACHUTE_WIDTH/2, PARACHUTE_Y);
 	}
 	
-	private String 
+	public void displayWord (String hiddenWord) {
+		
+	}
 
 	
 	/**
