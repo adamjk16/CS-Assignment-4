@@ -79,6 +79,10 @@ public class Hangman extends ConsoleProgram {
 			checkLetter();
 			println("Your guess now looks like this: " + hiddenWord);
 			println("You have " + guesses + " guesses left.");	
+			if (hiddenWord == word) {
+				println("You win.");
+				println("The word was: " + word);
+			}
 		}
 	}	
 	
@@ -104,7 +108,7 @@ public class Hangman extends ConsoleProgram {
 			}
 		} else {
 			guesses--;
-			println("There are no " + letter + "'s in the word.");				guesses--;
+			println("There are no " + letter + "'s in the word.");
 		}
 	}	
 	
