@@ -96,6 +96,7 @@ public class Hangman extends ConsoleProgram {
 			letter = Character.toUpperCase(letter);
 		}
 		if (word.indexOf(letter) != -1) {
+			println ("That guess is correct.");
 			for (int i = 0; i < word.length(); i++) {
 				if (letter == word.charAt(i)) {
 					hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
