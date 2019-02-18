@@ -83,7 +83,7 @@ public class Hangman extends ConsoleProgram {
 					}		
 				}
 			}
-	
+			println("Your guess now looks like this: " + hiddenWord);
 		}	
 	}
 	
