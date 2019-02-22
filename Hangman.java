@@ -75,6 +75,12 @@ public class Hangman extends ConsoleProgram {
 		private ArrayList <String> wordList = new ArrayList <String>();
 	}
 	
+	private String pickWord() {
+		wordList = new hangmanWords();
+		int randomWord = hangmanWords.getWord(randomWord);
+		return pickedWord;
+	}
+ 	
 	private void setUp() {
 		println("Welcome to Hangman");
 		println(word);
