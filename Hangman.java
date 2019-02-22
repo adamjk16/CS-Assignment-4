@@ -82,7 +82,7 @@ public class Hangman extends ConsoleProgram {
 		
 	private void playGame() {	
 		while (guesses > 0) {	
-			displayWord(hiddenWord);
+			displayPartialWord(hiddenWord);
 			getLetter = readLine ("Your guess: ");
 			if (getLetter.length() > 1) {
 				getLetter = readLine ("Please enter only character. Your guess: ");
@@ -151,7 +151,7 @@ public class Hangman extends ConsoleProgram {
 		canvas.add(parachute, canvas.getWidth()/2 - PARACHUTE_WIDTH/2, PARACHUTE_Y);
 	}
 	
-	private void displayWord(String word) {
+	private void displayPartialWord(String word) {
 		canvas.remove(hiddenLabel);
 		hiddenLabel = new GLabel (hiddenWord);
 		hiddenLabel.setFont(PARTIALLY_GUESSED_FONT);
@@ -160,6 +160,14 @@ public class Hangman extends ConsoleProgram {
 		canvas.add(hiddenLabel, x, y);
 	}
 	
+	private void displayIncorrectLetters(String word) {
+		canvas.remove(hiddenLabel);
+		hiddenLabel = new GLabel (hiddenWord);
+		hiddenLabel.setFont(PARTIALLY_GUESSED_FONT);
+		double x = canvas.getWidth()/2 - hiddenLabel.getWidth()/2;
+		double y = PARTIALLY_GUESSED_Y;
+		canvas.add(hiddenLabel, x, y);
+	}
 	
 	private void drawLines() {
 		int startY = PARACHUTE_HEIGHT + PARACHUTE_Y;
