@@ -65,9 +65,15 @@ public class Hangman extends ConsoleProgram {
 	private GImage karel = new GImage ("karel.png");
 	
 	public void run() {
+		readFile();
 		setUp();
 		playGame();
 	}	
+	
+	private void readFile() {
+		Scanner wordList = new Scanner(new File("HangmanLexicon.txt"));
+		private ArrayList wordList = newArrayList();
+	}
 	
 	private void setUp() {
 		println("Welcome to Hangman");
