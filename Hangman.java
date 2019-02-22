@@ -50,6 +50,7 @@ public class Hangman extends ConsoleProgram {
 	private GCanvas canvas = new GCanvas();
 	
 	
+	
 	/***********************************************************
 	 *                    Methods                              *
 	 ***********************************************************/
