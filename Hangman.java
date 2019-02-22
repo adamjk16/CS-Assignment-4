@@ -76,8 +76,9 @@ public class Hangman extends ConsoleProgram {
 	 
 	
  	private void pickWord() {
- 			Scanner lexicon = new Scanner(new File("HangmanLexicon.txt"));
- 			getRandomWord();
+ 		int index = rgen.nextInt(0, randomWord.getWordCount() - 1);
+ 		Scanner lexicon = new Scanner(new File("HangmanLexicon.txt"));
+ 		word = randomWord.getWord(index);
  	}			
  	
 	private void setUp() {
