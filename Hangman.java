@@ -219,8 +219,8 @@ public class Hangman extends ConsoleProgram {
 	 */
 	private String getRandomWord() {
 		try {
-			while(wordList.hasNextLine()) {
-				String line = wordList.nextLine();
+			while(true) {
+				String line = wordList.();
 				wordList.add(line);
 			}
 		} catch (IOException e) {
