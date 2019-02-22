@@ -137,6 +137,7 @@ public class Hangman extends ConsoleProgram {
 				canvas.remove(line);
 				ropes.remove(ropes.size() - 1);
 			}
+			correctGuess += getLetter;
 			incorrectGuess += getLetter;
 			displayIncorrectLetters(incorrectGuess);
 		}
