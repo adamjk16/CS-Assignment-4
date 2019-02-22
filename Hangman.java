@@ -64,7 +64,6 @@ public class Hangman extends ConsoleProgram {
 	private String incorrectGuess = "";
 	private GLabel incorrectGuessLabel = new GLabel ("");
 	private GImage karel = new GImage ("karel.png");
-	private GLabel correctWordLabel = new GLabel ("");
 
 	
 	public void run() {
@@ -217,21 +216,12 @@ public class Hangman extends ConsoleProgram {
 	 */
 	
 	private void displayPartialWord(String word) {
-		if (hiddenWord.equals(word)) {	
-			canvas.remove(hiddenLabel);
-			correctWordLabel = new GLabel (hiddenWord);
-			correctWordLabel.setFont(PARTIALLY_GUESSED_FONT);
-			double x = canvas.getWidth()/2 - correctWordLabel.getWidth()/2;
-			double y = PARTIALLY_GUESSED_Y;
-			canvas.add(correctWordLabel, x, y);
-		} else {
 		canvas.remove(hiddenLabel);	
 		hiddenLabel = new GLabel (hiddenWord);
 		hiddenLabel.setFont(PARTIALLY_GUESSED_FONT);
 		double x = canvas.getWidth()/2 - hiddenLabel.getWidth()/2;
 		double y = PARTIALLY_GUESSED_Y;
 		canvas.add(hiddenLabel, x, y);
-		}
 	}
 	
 	/*
