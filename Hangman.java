@@ -64,18 +64,15 @@ public class Hangman extends ConsoleProgram {
 	private GLabel incorrectGuessLabel = new GLabel ("");
 	private GImage karel = new GImage ("karel.png");
 	
-	private HangmanLexicon wordList;
+	hangmanLexicon = words;
+	
+	private ArrayList <String> wordList = new ArrayList <String>();
 	
 	public void run() {
-		readFile();
 		setUp();
 		playGame();
 	}	
-	
-	private String pickWord() {
-		wordList = new HangmanLexicon();
-		int randomWord = rgen.nextInt(0, )
-	}
+	 
  	
 	private void setUp() {
 		println("Welcome to Hangman");
@@ -211,7 +208,7 @@ public class Hangman extends ConsoleProgram {
 
 	
 	
-	public HangmanLexicon () {
+	public hangmanLexicon () {
 	try {	
 		Scanner wordList = new Scanner (new File(HangmanLexicon.txt));
 		while (wordList.hasNextLine()) {
