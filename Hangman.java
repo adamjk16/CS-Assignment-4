@@ -63,7 +63,8 @@ public class Hangman extends ConsoleProgram {
 	private String incorrectGuess = "";
 	private GLabel incorrectGuessLabel = new GLabel ("");
 	private GImage karel = new GImage ("karel.png");
-	
+	private String correctGuess = "";
+	private GLabel correctGuessLabel = new GLabel ("");
 
 	
 	public void run() {
@@ -193,11 +194,11 @@ public class Hangman extends ConsoleProgram {
 	
 	private void displayCorrectWord(String word) {
 		canvas.remove(incorrectGuessLabel);
-		incorrectGuessLabel = new GLabel (incorrectGuess);
-		incorrectGuessLabel.setFont(INCORRECT_GUESSES_FONT);
+		correctGuessLabel = new GLabel (correctGuess);
+		correctGuessLabel.setFont(INCORRECT_GUESSES_FONT);
 		double x = canvas.getWidth()/2 - incorrectGuessLabel.getWidth()/2;
 		double y = INCORRECT_GUESSES_Y;
-		canvas.add(incorrectGuessLabel, x, y);
+		canvas.add(correctGuessLabel, x, y);
 	}
 	
 	private void drawLines() {
