@@ -146,6 +146,7 @@ public class Hangman extends ConsoleProgram {
 		canvas.add(partialWord, canvas.getWidth()/2 - partialWord.getWidth()/2, PARTIALLY_GUESSED_Y);
 	}
 	
+	GObject line;
 	
 	private void drawLines() {
 		int startY = PARACHUTE_HEIGHT + PARACHUTE_Y;
@@ -153,9 +154,9 @@ public class Hangman extends ConsoleProgram {
 		int endY = KAREL_Y;
 		for (int i = 0; i < 7; i++) {
 			int startX = (canvas.getWidth()/2 - PARACHUTE_WIDTH/2) + (PARACHUTE_WIDTH/6 * i);
-			GLine line = new GLine(startX, startY, endX, endY);
+			line = new GLine(startX, startY, endX, endY);
 			canvas.add(line);
-			
+			getElementAt((canvas.getWidth()/2 - PARACHUTE_WIDTH/2) + (PARACHUTE_WIDTH/6 * i));
 		}
 	}		
 	
