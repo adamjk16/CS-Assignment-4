@@ -75,14 +75,19 @@ public class Hangman extends ConsoleProgram {
 	 
 	RandomGenerator rgen = RandomGenerator.getInstance();
 	
- 	private String pickWord() {
+ 	public void pickWord() {
  		try {
 			Scanner rd = new Scanner (new File("Hangman.Lexicon"));
+			while (true) {
+				String line = rd.nextLine();
+				if (line == null) break;
+				wordList.add(line);
+			}
+		rd.close();	
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
- 		getRandomWord();
- 		return (word);
+ 	
  	}			
  	
 	private void setUp() {
@@ -225,40 +230,14 @@ public class Hangman extends ConsoleProgram {
 	 * selects from among 10 choices.
 	 */
 	
-	private String getRandomWord() {
-		Scanner rd = openFile();
-		strList = new ArrayList<String>();
-		try {
-			while(true) {
-				String word = rd.nextLine();
-				if (word == null) break;
-				
-			}
-			rd.close();
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-	}	
-	
-	
-	private Scanner openFile() {
-		Scanner rd = null;
-		while (rd == null) {
-			try {
-				rd = new Scanner (new File ("ShorterLexicon.txt"));
-			} catch (IOException e) {
-				throw new RuntimeException (e);
-			}
-		}
-		return rd;
-	}
+
 	public int getWordCount() {
-		return strList.size();
+		return wordList.size();
 	}
 	public String getWord(int index) {
-		return strList.get(index);
+		return wordList.get(index);
 	}
 	
-	private ArrayList<String> strList = new ArrayList<String>();
+	private ArrayList<String> wordList = new ArrayList<String>();
 	
 }	
