@@ -220,7 +220,7 @@ public class Hangman extends ConsoleProgram {
 	private String getRandomWord() {
 		try {
 			while(true) {
-				String line = wordList.();
+				String line = wordList.readLine();
 				wordList.add(line);
 			}
 		} catch (IOException e) {
