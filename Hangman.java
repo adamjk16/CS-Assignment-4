@@ -120,16 +120,7 @@ public class Hangman extends ConsoleProgram {
 		} else {
 			guesses--;
 			println("There are no " + letter + "'s in the word.");
-			if (guesses % 2 == 0) {
-				GLine line = ropes.get(0);
-				canvas.remove(line);
-				ropes.remove(0);
-			} else {
-				GLine line = ropes.get(ropes.size() - 1);
-				canvas.remove(line);
-				ropes.remove(ropes.size() - 1);
-			}
-			canvas.remove(hiddenLabel);
+			displayWord(hiddenWord);
 		}
 	}	
 	
