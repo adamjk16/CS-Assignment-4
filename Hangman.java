@@ -92,6 +92,8 @@ public class Hangman extends ConsoleProgram {
 				println("The word was: " + word);
 				break;
 			}
+			hiddenWord = hiddenLabel;
+			canvas.add(hiddenLabel);
 			println("Your guess now looks like this: " + hiddenWord);
 			displayWord(hiddenWord);
 			println("You have " + guesses + " guesses left.");
