@@ -64,7 +64,6 @@ public class Hangman extends ConsoleProgram {
 	private GLabel incorrectGuessLabel = new GLabel ("");
 	private GImage karel = new GImage ("karel.png");
 	
-	
 
 	
 	public void run() {
@@ -76,7 +75,6 @@ public class Hangman extends ConsoleProgram {
 	private ArrayList <String> wordList = new ArrayList <String>(); 
 	
  	private void pickWord() {
- 		int index = rgen.nextInt(0, word.getWordCount());
  		Scanner wordList = new Scanner(new File("HangmanLexicon.txt"));
  		word = wordList.getWord(index);
  	}
