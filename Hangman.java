@@ -64,6 +64,8 @@ public class Hangman extends ConsoleProgram {
 	private GLabel incorrectGuessLabel = new GLabel ("");
 	private GImage karel = new GImage ("karel.png");
 	
+	private HangmanLexicon wordList;
+	
 	public void run() {
 		readFile();
 		setUp();
