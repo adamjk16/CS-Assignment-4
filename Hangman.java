@@ -226,7 +226,23 @@ public class Hangman extends ConsoleProgram {
 	
 	private String getRandomWord() {
 		Scanner rd = new Scanner (new File("HangmanLexicon.txt"));
-		str
+		strList = newArrayList<String>();
+		try {
+			while(true) {
+				String word = rd.nextLine();
+				strList.add(word);
+			}
+		} catch IOException(e); {
+			throw new ErrorException(e);
+		}
 	}
+	public int getWordCount() {
+		return strList.size();
+	}
+	public String getWord(int index) {
+		return strList.get(index);
+	}
+	
+	private ArrayList<String> strList = new ArrayList<String>();
 	
 }	
