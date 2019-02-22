@@ -224,7 +224,7 @@ public class Hangman extends ConsoleProgram {
 		Scanner wordList = new Scanner (new File("HangmanLexicon.txt"));	
 		while(wordList.hasNextLine()) {
 				String randomWord = wordList.nextLine();
-				return randomWord;
+				
 			}
 		wordList.close();
 		} catch (IOException e) {
