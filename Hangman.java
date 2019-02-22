@@ -72,11 +72,12 @@ public class Hangman extends ConsoleProgram {
 		playGame();
 	}	
 	
-	private ArrayList <String> wordList = new ArrayList <String>(); 
+	 
+	Scanner lexicon = new Scanner(new File("HangmanLexicon.txt"));
 	
  	private void pickWord() {
- 		Scanner wordList = new Scanner(new File("HangmanLexicon.txt"));
- 		word = wordList.getWord(index);
+ 		private ArrayList <String> lexicon = new ArrayList <String>();
+ 		
  	}
  	
 	private void setUp() {
