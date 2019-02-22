@@ -72,13 +72,13 @@ public class Hangman extends ConsoleProgram {
 		playGame();
 	}	
 	
+	ArrayList <String> lexicon = new ArrayList <String>();
 	 
-	Scanner lexicon = new Scanner(new File("HangmanLexicon.txt"));
 	
  	private void pickWord() {
- 		private ArrayList <String> lexicon = new ArrayList <String>();
- 		
- 	}
+ 			Scanner lexicon = new Scanner(new File("HangmanLexicon.txt"));
+ 			getRandomWord();
+ 	}			
  	
 	private void setUp() {
 		println("Welcome to Hangman");
