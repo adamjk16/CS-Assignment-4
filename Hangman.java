@@ -64,7 +64,6 @@ public class Hangman extends ConsoleProgram {
 	private GLabel incorrectGuessLabel = new GLabel ("");
 	private GImage karel = new GImage ("karel.png");
 	
-	hangmanLexicon = words;
 	
 	private ArrayList <String> wordList = new ArrayList <String>();
 	
@@ -73,7 +72,10 @@ public class Hangman extends ConsoleProgram {
 		playGame();
 	}	
 	 
- 	
+ 	private String pickWord () {
+ 		wordList = new HangmanLexicon();
+ 		
+ 	}
 	private void setUp() {
 		println("Welcome to Hangman");
 		println(word);
