@@ -109,18 +109,18 @@ public class Hangman extends ConsoleProgram {
 		if (Character.isLowerCase(letter)) {
 			letter = Character.toUpperCase(letter);
 		}
+		displayWord(hiddenWord);
 		if (word.indexOf(letter) != -1) {
 			println ("That guess is correct.");
 			for (int i = 0; i < word.length(); i++) {
 				if (letter == word.charAt(i)) {
 					hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
-					displayWord(hiddenWord);
 				} 		
 			}
 		} else {
 			guesses--;
 			println("There are no " + letter + "'s in the word.");
-			displayWord(hiddenWord);
+			updateWord(hiddenWord);
 		}
 	}	
 	
@@ -165,6 +165,16 @@ public class Hangman extends ConsoleProgram {
 		}
 	}
 	
+	if (guesses % 2 == 0) {
+		GLine line = ropes.get(0);
+		canvas.remove(line);
+		ropes.remove(0);
+	} else {
+		GLine line = ropes.get(ropes.size() - 1);
+		canvas.remove(line);
+		ropes.remove(ropes.size() - 1);
+	}
+	canvas.remove(hiddenLabel)
 	
 	
 	
