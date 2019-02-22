@@ -212,7 +212,7 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	/*
-	 * displays word partially guessed on canvas
+	 * displays word partially guessed on canvas, or complete word
 	 */
 	
 	private void displayPartialWord(String word) {
