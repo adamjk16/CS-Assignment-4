@@ -113,7 +113,7 @@ public class Hangman extends ConsoleProgram {
 			for (int i = 0; i < word.length(); i++) {
 				if (letter == word.charAt(i)) {
 					hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
-					canvas.displayWord(hiddenWord);
+					displayWord(hiddenWord);
 				} 		
 			}
 		} else {
