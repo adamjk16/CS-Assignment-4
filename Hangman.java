@@ -56,7 +56,7 @@ public class Hangman extends ConsoleProgram {
 	private String word = getRandomWord();
 	private String hiddenWord;
 	private String getLetter;
-	GObj
+	private ArrayList<GLine> ropes = new ArrayList<GLine>();
 
 	public void run() {
 		setUp();
