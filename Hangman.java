@@ -165,6 +165,7 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void displayIncorrectLetters(String incorrectGuess) {
+		canvas.remove(incorrectGuessLabel);
 		incorrectGuessLabel = new GLabel (incorrectGuess);
 		incorrectGuessLabel.setFont(INCORRECT_GUESSES_FONT);
 		double x = canvas.getWidth()/2 - incorrectGuessLabel.getWidth()/2;
