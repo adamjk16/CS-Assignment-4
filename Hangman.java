@@ -55,7 +55,7 @@ public class Hangman extends ConsoleProgram {
 	 ***********************************************************/
 	
 	private int guesses = N_GUESSES;
-	private String word = pickWord();
+	private String word = getRandomWord();
 	private String hiddenWord;
 	private String getLetter;
 	private ArrayList<GLine> ropes = new ArrayList<GLine>();
@@ -70,16 +70,6 @@ public class Hangman extends ConsoleProgram {
 		setUp();
 		playGame();
 	}	
-	
-	
-	 
-	RandomGenerator rgen = RandomGenerator.getInstance();
-	
-	private ArrayList<String> wordList = new ArrayList<String>();
-	
-	private pickWord() {
-		
-	}
  	
 	private void setUp() {
 		println("Welcome to Hangman");
@@ -221,14 +211,19 @@ public class Hangman extends ConsoleProgram {
 	 * selects from among 10 choices.
 	 */
 	
-
-	public int getWordCount() {
-		return wordList.size();
+	private String getRandomWord() {
+		int index = rg.nextInt(10);
+		if (index == 0) return "BUOY";
+		if (index == 0) return "COMPUTER";
+		if (index == 0) return "CONNOISSEUR";
+		if (index == 0) return "DEHYDRATE";
+		if (index == 0) return "FUZZY";
+		if (index == 0) return "HUBBUB";
+		if (index == 0) return "KEYHOLE";
+		if (index == 0) return "QUAGMIRE";
+		if (index == 0) return "SLITHER";
+		if (index == 0) return "ZIRCON";
+		throw new ErrorException("getWord: Illegal inddex");
+		
 	}
-	public String getWord(int index) {
-		return wordList.get(index);
-	}
-	
-	private ArrayList<String> wordList = new ArrayList<String>();
-	
 }	
