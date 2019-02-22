@@ -223,7 +223,10 @@ public class Hangman extends ConsoleProgram {
 		try {
 		Scanner wordList = new Scanner (new File("HangmanLexicon.txt"));	
 		while(wordList.hasNextLine()) {
-				String randomWord = wordList.nextLine();
+				String randomWord = randomWord.readLine();
+				if (randomWord == null) {
+					break;
+				}
 				
 			}
 		wordList.close();
@@ -241,5 +244,8 @@ public class Hangman extends ConsoleProgram {
 		if(index == 9) return "ZIRCON";
 		throw new ErrorException("getWord: Illegal index");
 		}	
+	}
+	public int getWordCount() {
+		
 	}
 }
