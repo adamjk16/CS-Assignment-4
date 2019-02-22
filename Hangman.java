@@ -78,7 +78,7 @@ public class Hangman extends ConsoleProgram {
 	
  	private void pickWord() {
  		Scanner lexicon = new Scanner(new File("HangmanLexicon.txt"));
- 		int index = rgen.nextInt(0, lexicon.getWordCount() - 1);
+ 		int rg = rgen.nextInt(0, lexicon.getWordCount() - 1);
  		word = lexicon.getWord(index);
  	}			
  	
@@ -221,14 +221,12 @@ public class Hangman extends ConsoleProgram {
 	 * This method returns a word to use in the hangman game. It randomly 
 	 * selects from among 10 choices.
 	 */
-	private void getRandomWord() {
+	private String getRandomWord() {
 		try {
 		Scanner wordList = new Scanner (new File("HangmanLexicon.txt"));	
 		while(true) {
 				String line = wordList.nextLine();
-				if (line == null) {
-					break;
-				}
+				if (line == null) break;
 			randomWord.add(line);		
 			}
 		wordList.close();
@@ -247,8 +245,8 @@ public class Hangman extends ConsoleProgram {
 		throw new ErrorException("getWord: Illegal index");
 		}	
 	}
-	public String getWord(int index) {
-		String word = randomWord.get(index);
+	public String getWord(int rg) {
+		String word = randomWord.get(rg);
 		return word;
 	}
 	
