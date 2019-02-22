@@ -57,6 +57,7 @@ public class Hangman extends ConsoleProgram {
 	private String hiddenWord;
 	private String getLetter;
 	private ArrayList<GLine> ropes = new ArrayList<GLine>();
+	private GLabel hiddenLabel = new GLabel ("");
 
 	public void run() {
 		setUp();
@@ -149,8 +150,6 @@ public class Hangman extends ConsoleProgram {
 		parachute.setSize(PARACHUTE_WIDTH, PARACHUTE_HEIGHT);
 		canvas.add(parachute, canvas.getWidth()/2 - PARACHUTE_WIDTH/2, PARACHUTE_Y);
 	}
-	
-	private GLabel hiddenLabel = new GLabel ("");
 	
 	private void displayWord(String word) {
 		canvas.remove(hiddenLabel);
