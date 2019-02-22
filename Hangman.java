@@ -193,11 +193,11 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void displayCorrectWord(String word) {
-		canvas.remove(incorrectGuessLabel);
+		canvas.remove(hiddenLabel);
 		correctGuessLabel = new GLabel (correctGuess);
-		correctGuessLabel.setFont(INCORRECT_GUESSES_FONT);
-		double x = canvas.getWidth()/2 - incorrectGuessLabel.getWidth()/2;
-		double y = INCORRECT_GUESSES_Y;
+		correctGuessLabel.setFont(PARTIALLY_GUESSED_FONT);
+		double x = canvas.getWidth()/2 - correctGuessLabel.getWidth()/2;
+		double y = PARTIALLY_GUESSED_Y;
 		canvas.add(correctGuessLabel, x, y);
 	}
 	
