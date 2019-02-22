@@ -247,6 +247,6 @@ public class Hangman extends ConsoleProgram {
 		}	
 	}
 	public int getWordCount() {
-		
+		return 
 	}
 }
