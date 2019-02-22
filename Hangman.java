@@ -76,7 +76,7 @@ public class Hangman extends ConsoleProgram {
 	 
 	
  	private void pickWord() {
- 		
+ 		String a = rgen.nextString(0, )
  	}			
  	
 	private void setUp() {
