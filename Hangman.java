@@ -224,12 +224,14 @@ public class Hangman extends ConsoleProgram {
 	
 	private String getRandomWord() {
 		try {
-			Scanner input = new Scanner(new File("HangmanLexicon.txt"));
-			while(input.hasNextLine)) {
-				input.nextLine();
-				randomWord.add(line);
+			Scanner rd = new Scanner(new File("HangmanLexicon.txt"));
+			int index = rg.nextInt(0, lexicon.wordCount() - 1);
+			Scanner rd = new Scanner(new File("HangmanLexicon.txt"));
+			while(rd.hasNextLine()) {
+				String num = rd.nextLine();
+				return num;
 			}
-			input.close();
+			rd.close();
 		} catch (IOException e) {
 		int index = rg.nextInt(10);
 		if(index == 0) return "BUOY";
