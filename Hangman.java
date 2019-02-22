@@ -248,7 +248,7 @@ public class Hangman extends ConsoleProgram {
 		}	
 	}
 	public String getWord(int index) {
-		word = randomWord.get(index);
+		String word = randomWord.get(index);
 		return word;
 	}
 	
