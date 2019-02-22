@@ -152,9 +152,13 @@ public class Hangman extends ConsoleProgram {
 	
 	private void displayWord(String word) {
 		GLabel partialWord = new GLabel (hiddenWord);
-		partialWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
-		partialWord.setFont(PARTIALLY_GUESSED_FONT);		
-		canvas.add(partialWord, canvas.getWidth()/2 - partialWord.getWidth()/2, PARTIALLY_GUESSED_Y);
+		partialWord.setFont(PARTIALLY_GUESSED_FONT);
+		double x = canvas.getWidth()/2 - partialWord.getWidth()/2;
+		double y = PARTIALLY_GUESSED_Y;
+		if (getElementAt (x,y) != null) {
+			remove(getElementAt(x,y));
+		}
+		canvas.add(partialWord, x, y);
 	}
 	
 	
