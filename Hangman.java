@@ -223,7 +223,6 @@ public class Hangman extends ConsoleProgram {
 		Scanner wordList = new Scanner (new File("HangmanLexicon.txt"));	
 		while(wordList.hasNextLine()) {
 				String word = wordList.nextLine();
-				if (word == null) break;
 				wordList.add(word);
 			}
 		wordList.close();
