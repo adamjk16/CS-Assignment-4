@@ -73,13 +73,13 @@ public class Hangman extends ConsoleProgram {
 		playGame();
 	}	
 	
-	ArrayList <String> wordList = new ArrayList <String>();
+	ArrayList <String> randomWord = new ArrayList <String>();
 	 
 	
  	private void pickWord() {
  		Scanner lexicon = new Scanner(new File("HangmanLexicon.txt"));
- 		int rg = rgen.nextInt(0, lexicon.getWordCount() - 1);
- 		word = lexicon.getWord(rg);
+ 		int index = rgen.nextInt(0, lexicon.getWordCount() - 1);
+ 		word = lexicon.getWord(index);
  	}			
  	
 	private void setUp() {
@@ -224,11 +224,12 @@ public class Hangman extends ConsoleProgram {
 	
 	private String getRandomWord() {
 		try {
-			
-		while(true) {
-				String line = lexicon.nextLine();		
+			Scanner input = new Scanner(new File("HangmanLexicon.txt"));
+			while(true) {
+				String line = input.nextLine();
+				randomWord.add(line);
 			}
-		lexicon.close();
+			input.close();
 		} catch (IOException e) {
 		int index = rg.nextInt(10);
 		if(index == 0) return "BUOY";
