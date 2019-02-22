@@ -125,6 +125,7 @@ public class Hangman extends ConsoleProgram {
 					hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
 				} 		
 			}
+			correctGuess += getLetter;
 		} else {
 			guesses--;
 			println("There are no " + letter + "'s in the word.");
@@ -137,7 +138,6 @@ public class Hangman extends ConsoleProgram {
 				canvas.remove(line);
 				ropes.remove(ropes.size() - 1);
 			}
-			correctGuess += getLetter;
 			incorrectGuess += getLetter;
 			displayIncorrectLetters(incorrectGuess);
 		}
