@@ -73,7 +73,7 @@ public class Hangman extends ConsoleProgram {
 		playGame();
 	}	
 	
-	ArrayList <String> randomWord = new ArrayList <String>();
+	ArrayList <String> wordList = new ArrayList <String>();
 	 
 	
  	private void pickWord() {
@@ -223,11 +223,8 @@ public class Hangman extends ConsoleProgram {
 	 */
 	private String getRandomWord() {
 		try {
-		Scanner wordList = new Scanner (new File("HangmanLexicon.txt"));	
 		while(true) {
-				String line = wordList.nextLine();
-				if (line == null) break;
-			randomWord.add(line);		
+				String line = wordList.nextLine();		
 			}
 		wordList.close();
 		} catch (IOException e) {
