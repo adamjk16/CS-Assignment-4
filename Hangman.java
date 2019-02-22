@@ -14,6 +14,7 @@ import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Hangman extends ConsoleProgram {
 
@@ -49,7 +50,7 @@ public class Hangman extends ConsoleProgram {
 	
 	private GCanvas canvas = new GCanvas();
 	
-	Scanner input = new Scanner (new File("HangmanLexicon.txt"));
+	new Scanner input = Scanner (new File("HangmanLexicon.txt"));
 	
 	/***********************************************************
 	 *                    Methods                              *
