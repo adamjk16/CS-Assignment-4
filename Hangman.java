@@ -1,8 +1,9 @@
 /*
  * File: Hangman.java
  * ------------------
- * This program will eventually play the Hangman game from
- * Assignment #4.
+ * This program obtains a random word from a pre-set list and 
+ * asks the user to input letter guesses with 7 allowable incorrect
+ * letters, until the word is guessed.
  */
 
 import acm.graphics.*;
@@ -14,7 +15,7 @@ import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
 
 public class Hangman extends ConsoleProgram {
 
@@ -72,6 +73,11 @@ public class Hangman extends ConsoleProgram {
 		playGame();
 	}	
  	
+
+	/*
+	 * displays welcome message and asks user for initial input
+	 */
+	
 	private void setUp() {
 		println("Welcome to Hangman");
 		println(word);
@@ -79,6 +85,11 @@ public class Hangman extends ConsoleProgram {
 		println("Your word now looks like this: " + hiddenWord);
 		println("You have " + guesses + " guesses left.");
 	}	
+	
+	/*
+	 * allows user to input further guesses until no turns left or
+	 * word is guesses
+	 */
 		
 	private void playGame() {	
 		while (guesses > 0) {	
@@ -105,6 +116,10 @@ public class Hangman extends ConsoleProgram {
 		}
 	}	
 	
+	/*
+	 * hides unguessed letters of word with dashes
+	 */
+	
 	private String hideWord(String word) {
 		String result = "";
 		for (int i = 0; i < word.length(); i++) {
@@ -113,27 +128,31 @@ public class Hangman extends ConsoleProgram {
 		return result;
 	}
 	
+	/* 
+	 * checks if guessed letter is in word
+	 */
+	
 	private void checkLetter() {
 		char letter = getLetter.charAt(0);
 		if (Character.isLowerCase(letter)) {
 			letter = Character.toUpperCase(letter);
 		}
-		if (word.indexOf(letter) != -1) {
+		if (word.indexOf(letter) != -1) {							//if the letter is in the word, it the index will not be -1
 			println ("That guess is correct.");
 			for (int i = 0; i < word.length(); i++) {
 				if (letter == word.charAt(i)) {
-					hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);
+					hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1);				//places within word
 				} 		
 			}
-		} else {
+		} else {													//if the letter is in the word, it the index will not be -1
 			guesses--;
 			println("There are no " + letter + "'s in the word.");
-			if (guesses % 2 == 0) {
+			if (guesses % 2 == 0) {									//removes last rope in updating array list (array list has initial index of 6)
 				GLine line = ropes.get(0);
 				canvas.remove(line);
 				ropes.remove(0);
-			} else {
-				GLine line = ropes.get(ropes.size() - 1);
+			} else {												//removes first rope in updating array list 
+				GLine line = ropes.get(ropes.size() - 1);			
 				canvas.remove(line);
 				ropes.remove(ropes.size() - 1);
 			}
@@ -141,6 +160,10 @@ public class Hangman extends ConsoleProgram {
 			displayIncorrectLetters(incorrectGuess);
 		}
 	}	
+	
+	/*
+	 * initializes implementation of canvas
+	 */
 	
 	public void init() {
 		add(canvas);
@@ -150,11 +173,19 @@ public class Hangman extends ConsoleProgram {
 		drawLines();
 	}
 	
+	/*
+	 * draws sky background behind Karel
+	 */
+	
 	private void drawBackground() {
 		GImage bg = new GImage ("background.jpg");
 		bg.setSize(canvas.getWidth(), canvas.getHeight());
 		canvas.add(bg, 0, 0);
 	}
+	
+	/*
+	 * draws Karel right side up
+	 */
 	
 	private void drawKarel() {
 		karel = new GImage ("karel.png");
@@ -162,11 +193,19 @@ public class Hangman extends ConsoleProgram {
 		canvas.add(karel, canvas.getWidth()/2 - KAREL_SIZE/2, KAREL_Y);
 	}
 	
+	/*
+	 * draws Karel upside down if user runs out of guesses
+	 */
+	
 	private void drawKarelFlipped() {
 		GImage karelFlipped = new GImage ("karelFlipped.png");
 		karelFlipped.setSize(KAREL_SIZE, KAREL_SIZE);
 		canvas.add(karelFlipped, canvas.getWidth()/2 - KAREL_SIZE/2, KAREL_Y);
 	}
+	
+	/*
+	 * draws parachute over Karel
+	 */
 	
 	public void drawParachute() {
 		GImage parachute = new GImage ("parachute.png");
@@ -174,16 +213,23 @@ public class Hangman extends ConsoleProgram {
 		canvas.add(parachute, canvas.getWidth()/2 - PARACHUTE_WIDTH/2, PARACHUTE_Y);
 	}
 	
+	/*
+	 * displays word partially guessed on canvas
+	 */
+	
 	private void displayPartialWord(String word) {
-		if (word.indexOf(getLetter) != -1) {
-			canvas.remove(hiddenLabel);
-		}	
+		canvas.remove(hiddenLabel);	
 		hiddenLabel = new GLabel (hiddenWord);
 		hiddenLabel.setFont(PARTIALLY_GUESSED_FONT);
 		double x = canvas.getWidth()/2 - hiddenLabel.getWidth()/2;
 		double y = PARTIALLY_GUESSED_Y;
 		canvas.add(hiddenLabel, x, y);
 	}
+	
+	/*
+	 * keeps a tab on incorrectly guessed letters under the partially guessed word 
+	 * on canvas
+	 */
 	
 	private void displayIncorrectLetters(String incorrectGuess) {
 		canvas.remove(incorrectGuessLabel);
@@ -194,6 +240,11 @@ public class Hangman extends ConsoleProgram {
 		canvas.add(incorrectGuessLabel, x, y);
 	}
 	
+	/*
+	 * displays correct word if the user correctly guesses
+	 * each letter in word
+	 */
+	
 	private void displayCorrectWord(String word) {
 		canvas.remove(hiddenLabel);
 		correctGuessLabel = new GLabel (correctGuess);
@@ -202,6 +253,10 @@ public class Hangman extends ConsoleProgram {
 		double y = PARTIALLY_GUESSED_Y;
 		canvas.add(correctGuessLabel, x, y);
 	}
+	
+	/*
+	 * draws ropes from which Karel is attached to parachute
+	 */
 	
 	private void drawLines() {
 		int startY = PARACHUTE_HEIGHT + PARACHUTE_Y;
