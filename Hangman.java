@@ -226,9 +226,9 @@ public class Hangman extends ConsoleProgram {
 		try {
 			
 		while(true) {
-				String line = wordList.nextLine();		
+				String line = lexicon.nextLine();		
 			}
-		wordList.close();
+		lexicon.close();
 		} catch (IOException e) {
 		int index = rg.nextInt(10);
 		if(index == 0) return "BUOY";
