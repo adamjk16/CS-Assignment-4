@@ -65,17 +65,18 @@ public class Hangman extends ConsoleProgram {
 	private GImage karel = new GImage ("karel.png");
 	
 	
-	private ArrayList <String> wordList = new ArrayList <String>();
+
 	
 	public void run() {
 		setUp();
 		playGame();
 	}	
-	 
- 	private String pickWord () {
- 		Scanner randomWord = new Scanner(new File("HangmanLexicon.txt"));
- 		wordList = new HangmanLexicon();
- 		
+	
+	private ArrayList <String> wordList = new ArrayList <String>(); 
+	
+ 	private void pickWord() {
+ 		Scanner wordList = new Scanner(new File("HangmanLexicon.txt"));
+ 		getRandomWord();
  	}
 	private void setUp() {
 		println("Welcome to Hangman");
@@ -210,20 +211,6 @@ public class Hangman extends ConsoleProgram {
 	
 
 	
-	
-	public hangmanLexicon () {
-	try {	
-		Scanner wordList = new Scanner (new File(HangmanLexicon.txt));
-		while (wordList.hasNextLine()) {
-			String line = wordList.nextLine();
-			wordList.add(line);
-		}
-	} catch (IOException e) {
-		throw new RuntimeException(e);
-	}
-	}
-
-	
 	/**
 	 * Method: Get Random Word
 	 * -------------------------
@@ -231,6 +218,12 @@ public class Hangman extends ConsoleProgram {
 	 * selects from among 10 choices.
 	 */
 	private String getRandomWord() {
+		try {
+			while(wordList.hasNextLine()) {
+				String line = wordList.nextLine();
+				wordList.add(line);
+			}
+		} catch (IOException e) {
 		int index = rg.nextInt(10);
 		if(index == 0) return "BUOY";
 		if(index == 1) return "COMPUTER";
