@@ -221,7 +221,7 @@ public class Hangman extends ConsoleProgram {
 	 * This method returns a word to use in the hangman game. It randomly 
 	 * selects from among 10 choices.
 	 */
-	private String getRandomWord() {
+	private void getRandomWord() {
 		try {
 		Scanner wordList = new Scanner (new File("HangmanLexicon.txt"));	
 		while(true) {
