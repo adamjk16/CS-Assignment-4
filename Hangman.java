@@ -92,7 +92,7 @@ public class Hangman extends ConsoleProgram {
 				break;
 			}
 			println("Your guess now looks like this: " + hiddenWord);
-			
+			displayWord(hiddenWord);
 			println("You have " + guesses + " guesses left.");
 		}
 	}	
@@ -110,7 +110,6 @@ public class Hangman extends ConsoleProgram {
 		if (Character.isLowerCase(letter)) {
 			letter = Character.toUpperCase(letter);
 		}
-		displayWord(hiddenWord);
 		if (word.indexOf(letter) != -1) {
 			println ("That guess is correct.");
 			for (int i = 0; i < word.length(); i++) {
