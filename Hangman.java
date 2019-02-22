@@ -58,7 +58,7 @@ public class Hangman extends ConsoleProgram {
 	private String getLetter;
 	private ArrayList<GLine> ropes = new ArrayList<GLine>();
 	private GLabel hiddenLabel = new GLabel ("");
-	private String incorrectGuesses = "";
+	private GLabel incorrectGuessLabel = new GLabel ("");
 	
 	public void run() {
 		setUp();
@@ -130,6 +130,7 @@ public class Hangman extends ConsoleProgram {
 				GLine line = ropes.get(ropes.size() - 1);
 				canvas.remove(line);
 				ropes.remove(ropes.size() - 1);
+				displayIncorrectLetters(incorrectGuess);
 			}
 		}
 	}	
@@ -161,13 +162,13 @@ public class Hangman extends ConsoleProgram {
 		canvas.add(hiddenLabel, x, y);
 	}
 	
-	private void displayIncorrectLetters(String word) {
-		canvas.remove(hiddenLabel);
-		hiddenLabel = new GLabel (hiddenWord);
-		hiddenLabel.setFont(PARTIALLY_GUESSED_FONT);
-		double x = canvas.getWidth()/2 - hiddenLabel.getWidth()/2;
-		double y = PARTIALLY_GUESSED_Y;
-		canvas.add(hiddenLabel, x, y);
+	private void displayIncorrectLetters(String incorrectGuess) {
+		canvas.remove(incorrectGuessLabel);
+		incorrectGuessLabel = new GLabel (hiddenWord);
+		incorrectGuessLabel.setFont(PARTIALLY_GUESSED_FONT);
+		double x = canvas.getWidth()/2 - incorrectGuessLabel.getWidth()/2;
+		double y = INCORRECT_GUESSES_Y;
+		canvas.add(incorrectGuessLabel, x, y);
 	}
 	
 	private void drawLines() {
