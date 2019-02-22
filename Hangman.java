@@ -82,6 +82,7 @@ public class Hangman extends ConsoleProgram {
 		
 	private void playGame() {	
 		while (guesses > 0) {	
+			displayWord(hiddenWord);
 			getLetter = readLine ("Your guess: ");
 			if (getLetter.length() > 1) {
 				getLetter = readLine ("Please enter only character. Your guess: ");
@@ -92,8 +93,6 @@ public class Hangman extends ConsoleProgram {
 				println("The word was: " + word);
 				break;
 			}
-			hiddenWord = hiddenLabel;
-			canvas.add(hiddenLabel);
 			println("Your guess now looks like this: " + hiddenWord);
 			displayWord(hiddenWord);
 			println("You have " + guesses + " guesses left.");
