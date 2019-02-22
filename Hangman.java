@@ -90,6 +90,7 @@ public class Hangman extends ConsoleProgram {
 			if (hiddenWord.equals(word)) {
 				println("You win.");			
 				println("The word was: " + word);
+				displayCorrectWord(word);
 				break;
 			}
 			println("Your guess now looks like this: " + hiddenWord);
@@ -182,6 +183,15 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void displayIncorrectLetters(String incorrectGuess) {
+		canvas.remove(incorrectGuessLabel);
+		incorrectGuessLabel = new GLabel (incorrectGuess);
+		incorrectGuessLabel.setFont(INCORRECT_GUESSES_FONT);
+		double x = canvas.getWidth()/2 - incorrectGuessLabel.getWidth()/2;
+		double y = INCORRECT_GUESSES_Y;
+		canvas.add(incorrectGuessLabel, x, y);
+	}
+	
+	private void displayCorrectWord(String word) {
 		canvas.remove(incorrectGuessLabel);
 		incorrectGuessLabel = new GLabel (incorrectGuess);
 		incorrectGuessLabel.setFont(INCORRECT_GUESSES_FONT);
