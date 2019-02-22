@@ -129,6 +129,7 @@ public class Hangman extends ConsoleProgram {
 				canvas.remove(line);
 				ropes.remove(ropes.size() - 1);
 			}
+			canvas.remove(hiddenLabel);
 		}
 	}	
 	
@@ -151,13 +152,13 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private GLabel hiddenLabel = new GLabel ("");
+	
 	private void displayWord(String word) {
-		remove(hiddenLabel);
-		GLabel partialWord = new GLabel (hiddenWord);
-		partialWord.setFont(PARTIALLY_GUESSED_FONT);
-		double x = canvas.getWidth()/2 - partialWord.getWidth()/2;
+		hiddenLabel = new GLabel (hiddenWord);
+		hiddenLabel.setFont(PARTIALLY_GUESSED_FONT);
+		double x = canvas.getWidth()/2 - hiddenLabel.getWidth()/2;
 		double y = PARTIALLY_GUESSED_Y;
-		canvas.add(partialWord, x, y);
+		canvas.add(hiddenLabel, x, y);
 	}
 	
 	
