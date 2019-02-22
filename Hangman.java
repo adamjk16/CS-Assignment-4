@@ -91,7 +91,7 @@ public class Hangman extends ConsoleProgram {
 			println("You have " + guesses + " guesses left.");
 		}
 		if (guesses == 0) {
-			
+			drawKarelFlipped();
 		}
 	}	
 	
@@ -150,6 +150,12 @@ public class Hangman extends ConsoleProgram {
 		GImage karel = new GImage ("karel.png");
 		karel.setSize(KAREL_SIZE, KAREL_SIZE);
 		canvas.add(karel, canvas.getWidth()/2 - KAREL_SIZE/2, KAREL_Y);
+	}
+	
+	private void drawKarelFlipped() {
+		GImage karelFlipped = new GImage ("karel.png");
+		karelFlipped.setSize(KAREL_SIZE, KAREL_SIZE);
+		canvas.add(karelFlipped, canvas.getWidth()/2 - KAREL_SIZE/2, KAREL_Y);
 	}
 	
 	public void drawParachute() {
