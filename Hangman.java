@@ -225,6 +225,8 @@ public class Hangman extends ConsoleProgram {
 	 */
 	
 	private String getRandomWord() {
-		Scanner rd = 
+		Scanner rd = new Scanner (new File("HangmanLexicon.txt"));
+		str
 	}
+	
 }	
