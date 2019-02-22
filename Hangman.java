@@ -211,7 +211,10 @@ public class Hangman extends ConsoleProgram {
 
 	
 	
-	
+	public HangmanLexicon () {
+		
+		Scanner wordList = new Scanner (new File(HangmanLexicon.txt));
+	}
 
 	
 	/**
@@ -221,9 +224,6 @@ public class Hangman extends ConsoleProgram {
 	 * selects from among 10 choices.
 	 */
 	private String getRandomWord() {
-		try {
-			
-		}
 		int index = rg.nextInt(10);
 		if(index == 0) return "BUOY";
 		if(index == 1) return "COMPUTER";
