@@ -70,7 +70,7 @@ public class Hangman extends ConsoleProgram {
 		playGame();
 	}	
 	
-	private void readFile() {
+	public void readFile() {
 		Scanner wordList = new Scanner(new File("HangmanLexicon.txt"));
 		private ArrayList wordList = newArrayList();
 	}
