@@ -125,7 +125,7 @@ public class Hangman extends ConsoleProgram {
 				canvas.remove(line);
 				ropes.remove(0);
 			} else {
-				GLine line = ropes.get(0);
+				GLine line = ropes.get(guesses);
 				canvas.remove(line);
 				ropes.remove(0);
 			}
