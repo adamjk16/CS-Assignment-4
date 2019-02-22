@@ -79,7 +79,7 @@ public class Hangman extends ConsoleProgram {
  	private void pickWord() {
  		Scanner lexicon = new Scanner(new File("HangmanLexicon.txt"));
  		int rg = rgen.nextInt(0, lexicon.getWordCount() - 1);
- 		word = lexicon.getWord(index);
+ 		word = lexicon.getWord();
  	}			
  	
 	private void setUp() {
