@@ -74,7 +74,6 @@ public class Hangman extends ConsoleProgram {
 	}	
 	
 	ArrayList <String> randomWord = new ArrayList <String>();
-	private Scanner rd;
 	 
 	
  	private void pickWord() {
@@ -223,13 +222,13 @@ public class Hangman extends ConsoleProgram {
 	 * selects from among 10 choices.
 	 */
 	
-	private String getRandomWord(randomWord) {
+	private String getRandomWord() {
 		try {
-			rd = new Scanner(new File("HangmanLexicon.txt"));
-			
+			Scanner rd = new Scanner(new File("HangmanLexicon.txt"));
+			while (rd.hasNextLine())
 			String num = rd.nextLine();
 				return num;
-			
+			}
 		rd.close();
 		} catch (IOException e) {
 		int index = rg.nextInt(10);
