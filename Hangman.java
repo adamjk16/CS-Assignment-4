@@ -157,6 +157,7 @@ public class Hangman extends ConsoleProgram {
 			int startX = (canvas.getWidth()/2 - PARACHUTE_WIDTH/2) + (PARACHUTE_WIDTH/6 * i);
 			GLine line = new GLine(startX, startY, endX, endY);
 			canvas.add(line);
+			ropes.add(line);
 		}
 	}
 	
