@@ -76,8 +76,7 @@ public class Hangman extends ConsoleProgram {
 	 
 	
  	private void pickWord() {
- 		Scanner lexicon = new Scanner(new File("HangmanLexicon.txt"));
- 		ArrayList <String> lexicon = new ArrayList <String>();
+ 		
  	}			
  	
 	private void setUp() {
@@ -221,15 +220,6 @@ public class Hangman extends ConsoleProgram {
 	 */
 	
 	private String getRandomWord() {
-		try {
-			Scanner rd = new Scanner(new File("HangmanLexicon.txt"));
-			while (rd.hasNextLine());
-			String num = rd.nextLine();
-				return num;
-			}
-		rd.close();
-		} catch (IOException e) {
-			throw new ErrorException("getWord: Illegal index");
-		}	
+		
 	}
-	
+}	
