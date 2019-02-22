@@ -120,7 +120,7 @@ public class Hangman extends ConsoleProgram {
 		} else {
 			guesses--;
 			println("There are no " + letter + "'s in the word.");
-			GLine = ropes.get(0);
+			GLine line = ropes.get(0);
 			
 			canvas.remove(line);
 		}
