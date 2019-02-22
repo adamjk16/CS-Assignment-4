@@ -67,6 +67,7 @@ public class Hangman extends ConsoleProgram {
 		drawBackground();
 		drawKarel();
 		drawParachute();
+		drawLines();
 	}
 	
 	private void setUp() {
@@ -150,9 +151,9 @@ public class Hangman extends ConsoleProgram {
 		int endX = canvas.getWidth()/2;
 		int endY = KAREL_Y;
 		for (int i = 0; i < 7; i++) {
-			int startX = canvas.getWidth()/2 - PARACHUTE_WIDTH/2;
-			GLine line = new GLine ();
-			canvas.add(line, )
+			int startX = (canvas.getWidth()/2 - PARACHUTE_WIDTH/2) + (PARACHUTE_WIDTH/6 * i);
+			GLine line = new GLine(startX, startY, endX, endY);
+			canvas.add(line);
 			
 		}
 	}		
