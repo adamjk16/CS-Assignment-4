@@ -55,7 +55,7 @@ public class Hangman extends ConsoleProgram {
 	 ***********************************************************/
 	
 	private int guesses = N_GUESSES;
-	private String word;
+	private String word = pickWord();
 	private String hiddenWord;
 	private String getLetter;
 	private ArrayList<GLine> ropes = new ArrayList<GLine>();
