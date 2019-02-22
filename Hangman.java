@@ -218,7 +218,7 @@ public class Hangman extends ConsoleProgram {
 	 */
 	
 	private void displayPartialWord(String word) {
-		if (word != )
+		if (hiddenWord != )
 		canvas.remove(hiddenLabel);	
 		hiddenLabel = new GLabel (hiddenWord);
 		hiddenLabel.setFont(PARTIALLY_GUESSED_FONT);
