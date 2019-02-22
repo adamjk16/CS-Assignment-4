@@ -73,13 +73,12 @@ public class Hangman extends ConsoleProgram {
 		playGame();
 	}	
 	
-	ArrayList <String> randomWord = new ArrayList <String>();
+	
 	 
 	
  	private void pickWord() {
  		Scanner lexicon = new Scanner(new File("HangmanLexicon.txt"));
- 		int index = rgen.nextInt(0, lexicon.getWordCount() - 1);
- 		word = lexicon.getWord(index);
+ 		ArrayList <String> lexicon = new ArrayList <String>();
  	}			
  	
 	private void setUp() {
@@ -231,26 +230,7 @@ public class Hangman extends ConsoleProgram {
 			}
 		rd.close();
 		} catch (IOException e) {
-		int index = rg.nextInt(10);
-		if(index == 0) return "BUOY";
-		if(index == 1) return "COMPUTER";
-		if(index == 2) return "CONNOISSEUR";
-		if(index == 3) return "DEHYDRATE";
-		if(index == 4) return "FUZZY";
-		if(index == 5) return "HUBBUB";
-		if(index == 6) return "KEYHOLE";
-		if(index == 7) return "QUAGMIRE";
-		if(index == 8) return "SLITHER";
-		if(index == 9) return "ZIRCON";
-		throw new ErrorException("getWord: Illegal index");
+			throw new ErrorException("getWord: Illegal index");
 		}	
 	}
-	public String getWord(int rg) {
-		String word = randomWord.get(rg);
-		return word;
-	}
 	
-	public int wordCount() {
-		return randomWord.size();
-	}
-}
