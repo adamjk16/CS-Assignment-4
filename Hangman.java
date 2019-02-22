@@ -221,7 +221,7 @@ public class Hangman extends ConsoleProgram {
 	 * This method returns a word to use in the hangman game. It randomly 
 	 * selects from among 10 choices.
 	 */
-	public class HangmanLexicon {
+	
 	private String getRandomWord() {
 		try {
 		while(true) {
@@ -250,6 +250,5 @@ public class Hangman extends ConsoleProgram {
 	
 	public int wordCount() {
 		return randomWord.size();
-	}
 	}
 }
