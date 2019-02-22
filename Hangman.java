@@ -214,15 +214,15 @@ public class Hangman extends ConsoleProgram {
 	private String getRandomWord() {
 		int index = rg.nextInt(10);
 		if (index == 0) return "BUOY";
-		if (index == 0) return "COMPUTER";
-		if (index == 0) return "CONNOISSEUR";
-		if (index == 0) return "DEHYDRATE";
-		if (index == 0) return "FUZZY";
-		if (index == 0) return "HUBBUB";
-		if (index == 0) return "KEYHOLE";
-		if (index == 0) return "QUAGMIRE";
-		if (index == 0) return "SLITHER";
-		if (index == 0) return "ZIRCON";
+		if (index == 1) return "COMPUTER";
+		if (index == 2) return "CONNOISSEUR";
+		if (index == 3) return "DEHYDRATE";
+		if (index == 4) return "FUZZY";
+		if (index == 5) return "HUBBUB";
+		if (index == 6) return "KEYHOLE";
+		if (index == 7) return "QUAGMIRE";
+		if (index == 8) return "SLITHER";
+		if (index == 9) return "ZIRCON";
 		throw new ErrorException("getWord: Illegal inddex");
 		
 	}
