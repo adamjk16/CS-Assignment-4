@@ -158,6 +158,7 @@ public class Hangman extends ConsoleProgram {
 		double x = canvas.getWidth()/2 - hiddenLabel.getWidth()/2;
 		double y = PARTIALLY_GUESSED_Y;
 		canvas.add(hiddenLabel, x, y);
+		canvas.remove(hiddenLabel);
 	}
 	
 	
