@@ -6,6 +6,7 @@
  */
 
 import acm.graphics.*;
+
 import acm.program.*;
 import acm.util.*;
 
@@ -47,6 +48,8 @@ public class Hangman extends ConsoleProgram {
 	private RandomGenerator rg = new RandomGenerator();
 	
 	private GCanvas canvas = new GCanvas();
+	
+	Scanner input = new Scanner(new File("HangmanLexicon.txt"));
 	
 	/***********************************************************
 	 *                    Methods                              *
