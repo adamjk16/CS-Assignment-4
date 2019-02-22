@@ -20,7 +20,17 @@ public class AltCaps extends ConsoleProgram {
 	 */
 	private String altCaps(String input) {
 		String output = "";
-		// TODO: implement altCaps!
+		int num = 0;
+		for(int i = 0; i < input.length(); i++) {
+			if (Character.isLetter(input.charAt(i))) {
+				num++;
+			}
+			if (num % 2 != 0) {
+				output += Character.toLowerCase(input.charAt(i));
+			} else {
+				output += Character.toUpperCase(input.charAt(i));
+			}
+		}
 		return output;
 	}
 
