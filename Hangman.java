@@ -94,6 +94,8 @@ public class Hangman extends ConsoleProgram {
 		if (guesses == 0) {
 			canvas.remove(karel);
 			drawKarelFlipped();
+			println ("You Lose.");
+			println ("The word was: " + word);
 		}
 	}	
 	
