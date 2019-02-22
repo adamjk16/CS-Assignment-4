@@ -66,14 +66,6 @@ public class Hangman extends ConsoleProgram {
 		playGame();
 	}	
 	
-	public void init() {
-		add(canvas);
-		drawBackground();
-		drawKarel();
-		drawParachute();
-		drawLines();
-	}
-	
 	private void setUp() {
 		println("Welcome to Hangman");
 		println(word);
@@ -97,6 +89,9 @@ public class Hangman extends ConsoleProgram {
 			}
 			println("Your guess now looks like this: " + hiddenWord);
 			println("You have " + guesses + " guesses left.");
+		}
+		if (guesses == 0) {
+			
 		}
 	}	
 	
@@ -136,6 +131,14 @@ public class Hangman extends ConsoleProgram {
 			displayIncorrectLetters(incorrectGuess);
 		}
 	}	
+	
+	public void init() {
+		add(canvas);
+		drawBackground();
+		drawKarel();
+		drawParachute();
+		drawLines();
+	}
 	
 	private void drawBackground() {
 		GImage bg = new GImage ("background.jpg");
