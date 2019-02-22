@@ -101,7 +101,7 @@ public class Hangman extends ConsoleProgram {
 			if (hiddenWord.equals(word)) {
 				println("You win.");			
 				println("The word was: " + word);
-				displayCorrectWord(word);
+				displayPartialWord(word);
 				break;
 			}
 			println("Your guess now looks like this: " + hiddenWord);
@@ -247,19 +247,6 @@ public class Hangman extends ConsoleProgram {
 		canvas.add(incorrectGuessLabel, x, y);
 	}
 	
-	/*
-	 * displays correct word if the user correctly guesses
-	 * each letter in word
-	 */
-	
-	private void displayCorrectWord(String word) {
-		canvas.remove(hiddenLabel);
-		correctGuessLabel = new GLabel (correctGuess);
-		correctGuessLabel.setFont(PARTIALLY_GUESSED_FONT);
-		double x = canvas.getWidth()/2 - correctGuessLabel.getWidth()/2;
-		double y = PARTIALLY_GUESSED_Y;
-		canvas.add(correctGuessLabel, x, y);
-	}
 	
 	/*
 	 * draws ropes from which Karel is attached to parachute
