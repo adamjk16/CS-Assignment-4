@@ -155,9 +155,6 @@ public class Hangman extends ConsoleProgram {
 		partialWord.setFont(PARTIALLY_GUESSED_FONT);
 		double x = canvas.getWidth()/2 - partialWord.getWidth()/2;
 		double y = PARTIALLY_GUESSED_Y;
-		if (getElementAt (x,y) != null) {
-			remove(getElementAt(x,y));
-		}
 		canvas.add(partialWord, x, y);
 	}
 	
