@@ -92,6 +92,7 @@ public class Hangman extends ConsoleProgram {
 				break;
 			}
 			println("Your guess now looks like this: " + hiddenWord);
+			
 			println("You have " + guesses + " guesses left.");
 		}
 	}	
@@ -120,7 +121,15 @@ public class Hangman extends ConsoleProgram {
 		} else {
 			guesses--;
 			println("There are no " + letter + "'s in the word.");
-			updateWord(hiddenWord);
+			if (guesses % 2 == 0) {
+				GLine line = ropes.get(0);
+				canvas.remove(line);
+				ropes.remove(0);
+			} else {
+				GLine line = ropes.get(ropes.size() - 1);
+				canvas.remove(line);
+				ropes.remove(ropes.size() - 1);
+			}
 		}
 	}	
 	
@@ -165,16 +174,7 @@ public class Hangman extends ConsoleProgram {
 		}
 	}
 	
-	if (guesses % 2 == 0) {
-		GLine line = ropes.get(0);
-		canvas.remove(line);
-		ropes.remove(0);
-	} else {
-		GLine line = ropes.get(ropes.size() - 1);
-		canvas.remove(line);
-		ropes.remove(ropes.size() - 1);
-	}
-	canvas.remove(hiddenLabel)
+
 	
 	
 	
