@@ -60,6 +60,7 @@ public class Hangman extends ConsoleProgram {
 	private GLabel hiddenLabel = new GLabel ("");
 	private String incorrectGuess = "";
 	private GLabel incorrectGuessLabel = new GLabel ("");
+	private GImage karel = new GImage ("karel.png");
 	
 	public void run() {
 		setUp();
@@ -91,6 +92,7 @@ public class Hangman extends ConsoleProgram {
 			println("You have " + guesses + " guesses left.");
 		}
 		if (guesses == 0) {
+			canvas.remove(karel);
 			drawKarelFlipped();
 		}
 	}	
@@ -147,7 +149,7 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void drawKarel() {
-		GImage karel = new GImage ("karel.png");
+		karel = new GImage ("karel.png");
 		karel.setSize(KAREL_SIZE, KAREL_SIZE);
 		canvas.add(karel, canvas.getWidth()/2 - KAREL_SIZE/2, KAREL_Y);
 	}
