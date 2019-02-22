@@ -74,7 +74,7 @@ public class Hangman extends ConsoleProgram {
 	
 	private ArrayList <String> wordList = new ArrayList <String>(); 
 	
- 	public void pickWord() {
+ 	private void pickWord() {
  		Scanner wordList = new Scanner(new File("HangmanLexicon.txt"));
  		getRandomWord();
  		return randomWord;
