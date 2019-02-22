@@ -75,9 +75,14 @@ public class Hangman extends ConsoleProgram {
 	 
 	RandomGenerator rgen = RandomGenerator.getInstance();
 	
- 	private void pickWord() {
- 		Scanner rd = new Scanner (new File("Hangman.Lexicon"));
+ 	private String pickWord() {
+ 		try {
+			Scanner rd = new Scanner (new File("Hangman.Lexicon"));
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
  		getRandomWord();
+ 		return (word);
  	}			
  	
 	private void setUp() {
@@ -221,7 +226,7 @@ public class Hangman extends ConsoleProgram {
 	 */
 	
 	private String getRandomWord() {
-		Scanner rd = new Scanner (new File("HangmanLexicon.txt"));
+		Scanner rd = 
 		strList = new ArrayList<String>();
 		try {
 			while(true) {
