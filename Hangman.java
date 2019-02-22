@@ -49,7 +49,6 @@ public class Hangman extends ConsoleProgram {
 	
 	private GCanvas canvas = new GCanvas();
 	
-	Scanner input = new Scanner(new File("HangmanLexicon.txt"));
 	
 	/***********************************************************
 	 *                    Methods                              *
@@ -214,6 +213,9 @@ public class Hangman extends ConsoleProgram {
 	 * selects from among 10 choices.
 	 */
 	private String getRandomWord() {
+		try {
+			
+		}
 		int index = rg.nextInt(10);
 		if(index == 0) return "BUOY";
 		if(index == 1) return "COMPUTER";
