@@ -226,17 +226,31 @@ public class Hangman extends ConsoleProgram {
 	 */
 	
 	private String getRandomWord() {
-		Scanner rd = 
+		Scanner rd = openFile();
 		strList = new ArrayList<String>();
 		try {
 			while(true) {
 				String word = rd.nextLine();
-				strList.add(word);
+				if (word == null) break;
+				
 			}
-		rd.close();	
+			rd.close();
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
+	}	
+	
+	
+	private Scanner openFile() {
+		Scanner rd = null;
+		while (rd == null) {
+			try {
+				rd = new Scanner (new File ("ShorterLexicon.txt"));
+			} catch (IOException e) {
+				throw new RuntimeException (e);
+			}
+		}
+		return rd;
 	}
 	public int getWordCount() {
 		return strList.size();
