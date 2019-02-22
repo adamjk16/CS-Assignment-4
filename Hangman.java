@@ -56,6 +56,7 @@ public class Hangman extends ConsoleProgram {
 	private String word = getRandomWord();
 	private String hiddenWord;
 	private String getLetter;
+	GObj
 
 	public void run() {
 		setUp();
