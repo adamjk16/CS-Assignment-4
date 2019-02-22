@@ -50,8 +50,6 @@ public class Hangman extends ConsoleProgram {
 	
 	private GCanvas canvas = new GCanvas();
 	
-	new Scanner input = Scanner (new File("HangmanLexicon.txt"));
-	
 	/***********************************************************
 	 *                    Methods                              *
 	 ***********************************************************/
@@ -75,6 +73,7 @@ public class Hangman extends ConsoleProgram {
 	}	
 	 
  	private String pickWord () {
+ 		Scanner randomWord = new Scanner(new File("HangmanLexicon.txt"));
  		wordList = new HangmanLexicon();
  		
  	}
