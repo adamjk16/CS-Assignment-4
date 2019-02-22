@@ -123,6 +123,7 @@ public class Hangman extends ConsoleProgram {
 			GLine line = ropes.get(0);
 			
 			canvas.remove(line);
+			ropes.remove(0);
 		}
 	}	
 	
