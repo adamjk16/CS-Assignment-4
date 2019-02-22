@@ -224,11 +224,11 @@ public class Hangman extends ConsoleProgram {
 		try {
 		Scanner wordList = new Scanner (new File("HangmanLexicon.txt"));	
 		while(true) {
-				String randomWord = randomWord.readLine();
-				if (randomWord == null) {
+				String line = wordList.nextLine();
+				if (line == null) {
 					break;
 				}
-				
+			randomWord.add(line);		
 			}
 		wordList.close();
 		} catch (IOException e) {
