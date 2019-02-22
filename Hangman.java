@@ -74,10 +74,10 @@ public class Hangman extends ConsoleProgram {
 	
 	private ArrayList <String> wordList = new ArrayList <String>(); 
 	
- 	public String pickWord() {
+ 	public void pickWord() {
  		Scanner wordList = new Scanner(new File("HangmanLexicon.txt"));
  		getRandomWord();
- 		return ;
+ 		return randomWord;
  	}
  	
 	private void setUp() {
