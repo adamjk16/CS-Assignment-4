@@ -72,7 +72,7 @@ public class Hangman extends ConsoleProgram {
 		playGame();
 	}	
 	
-	ArrayList <String> lexicon = new ArrayList <String>();
+	ArrayList <String> randomWord = new ArrayList <String>();
 	 
 	
  	private void pickWord() {
@@ -223,7 +223,7 @@ public class Hangman extends ConsoleProgram {
 	private String getRandomWord() {
 		try {
 		Scanner wordList = new Scanner (new File("HangmanLexicon.txt"));	
-		while(wordList.hasNextLine()) {
+		while(true) {
 				String randomWord = randomWord.readLine();
 				if (randomWord == null) {
 					break;
@@ -246,7 +246,12 @@ public class Hangman extends ConsoleProgram {
 		throw new ErrorException("getWord: Illegal index");
 		}	
 	}
-	public int getWordCount() {
-		return 
+	public String getWord(int index) {
+		word = randomWord.get(index);
+		return word;
+	}
+	
+	public int wordCount() {
+		return randomWord.size();
 	}
 }
