@@ -55,7 +55,7 @@ public class Hangman extends ConsoleProgram {
 	 ***********************************************************/
 	
 	private int guesses = N_GUESSES;
-	private String word = pickWord();
+	private String word;
 	private String hiddenWord;
 	private String getLetter;
 	private ArrayList<GLine> ropes = new ArrayList<GLine>();
@@ -67,6 +67,7 @@ public class Hangman extends ConsoleProgram {
 
 	
 	public void run() {
+		pickWord();
 		setUp();
 		playGame();
 	}	
@@ -75,22 +76,11 @@ public class Hangman extends ConsoleProgram {
 	 
 	RandomGenerator rgen = RandomGenerator.getInstance();
 	
-	private HangmanLexicon rd;
+	private ArrayList<String> wordList = new ArrayList<String>();
 	
- 	public class HangmanLexicon {
- 		try {
-			Scanner rd = new Scanner (new File("Hangman.Lexicon"));
-			while (true) {
-				String line = rd.nextLine();
-				if (line == null) break;
-				wordList.add(line);
-			}
-		rd.close();	
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
- 	
- 	}			
+	private pickWord() {
+		
+	}
  	
 	private void setUp() {
 		println("Welcome to Hangman");
