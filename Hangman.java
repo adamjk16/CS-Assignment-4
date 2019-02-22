@@ -58,6 +58,7 @@ public class Hangman extends ConsoleProgram {
 	private String getLetter;
 	private ArrayList<GLine> ropes = new ArrayList<GLine>();
 	private GLabel hiddenLabel = new GLabel ("");
+	private String incorrectGuess = "";
 	private GLabel incorrectGuessLabel = new GLabel ("");
 	
 	public void run() {
